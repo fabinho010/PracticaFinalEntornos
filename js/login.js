@@ -14,19 +14,17 @@ iconeClose.addEventListener('click', ()=> {
 
 function enviar(){
     // valores de los campos de entrada de email y password en el formulario y lo guarda en la variable email y password respectivamente
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
     //Proceso Backend
     //Inicia la solicitud hhtp
     var http = new XMLHttpRequest();
     // Configuración de  la solicitud HTTP GET al servlet .
-    http.open('GET',"Backend/LoginServlet?email=" + email + "&password" + passworld, true );
-
+    http.open("GET","http://localhost:8080/farmaceutica/login?email=" + email +"&password="+ password,true);
     //Define una función de devolución de llamada que se ejecutará cuando la respuesta de la solicitud HTTP esté lista.
-    http.onload = function(){
+    /*http.onreadystatechange = function(){
         // Verifica si el estado de la respuesta es 200 ( que signica éxito) para continuar .
-        if(http.status==200){
+        if(this.readyState== 4 && http.status==200){
             //Obtiene el texto de la respuesta de la solicitud HTTP
             var session = http.responseText;
             if(session !==null){
@@ -40,6 +38,6 @@ function enviar(){
             }
         }
     }
-    //Envía la solicitud HTTP al servidor con los parámetros especificados en el método open()
+    //Envía la solicitud HTTP al servidor con los parámetros especificados en el método open()*/
     http.send();
 }
