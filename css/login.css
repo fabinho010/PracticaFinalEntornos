@@ -1,0 +1,135 @@
+.wrapper{
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgb(255,255,255,.5);
+    border-radius: 20px;
+    /*Filtro para que se vea el contenido del formulario*/
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgb(0,0,0,.5);
+    display: flex;
+    /*Centra el contenido del contenedor*/
+    justify-content: center;
+    /* */
+    align-items: center;
+    /*Para los elementos que sobresalen tengan un limite como por ejemplo el icono para cerrar*/
+    /*Tambien me sirve para ocultar o el contenido de login o el de registration*/
+    overflow: hidden;
+    transform: scale(0);
+    /*El tamaño para el contenedor para loguearse y registrarse no es lo mismo*/
+    transition: transform .5s ease , height .2s ease;
+}
+
+.wrapper.active-popup {
+    /*Muestro el contenedor*/
+    transform: scale(1);
+}
+
+.wrapper.active-popup .welcome{
+    transform: scale(0);
+}
+
+/*Bloque contenido del contenedor*/
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.welcome.active-popup{
+    padding-left: 100%;
+}
+
+
+
+/*Icono para cerrar*/
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #162938;
+    font-size: 2em;
+    color: #CCFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+
+}
+
+/*Titulo del contenido*/
+.form-box h2 {
+    font-size: 2em;
+    color: #CCFFFF;
+    text-align: center;
+
+}
+/*Diseño inputs*/
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    /*Lineas que separan los inputs*/
+    border-bottom: 2px solid #CCFFFF;
+    margin: 30px 0;
+}
+/*LoS mensajes que vienen con los inputs*/
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #CCFFFF;
+    font-weight: 500;
+    pointer-events: none;
+    /*Movimineto ante cualquier transicion o modificación que se haga*/
+    transition: .5s;
+}
+
+/*Condiciones.Si estoy sobre los inputs el label va hacia arriba*/
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+}
+/*Los inputs*/
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #CCFFFF;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+/*Los iconos*/
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #162938;
+    line-height: 57px;
+}
+
+
+
+/*Boton de sumit*/
+.btn{
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #CCFFFF;
+    font-weight: 500;
+}

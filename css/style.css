@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    display: flex;       
+    justify-content:space-evenly;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../assets/images/fondo2.jpg') no-repeat;
+    /*Ajusta la imagen al tamaño real*/
+    background-size: cover;
+    /*Sin esto la otra imagen queda mejor*/
+    background-position: center;
+}
+
+/*Boto de Login*/
+.navigation .btnLogin-popup{
+
+    /*Anchura del boton*/
+    width: 130px;
+    /*Altura del boton*/
+    height: 50px;
+    /* Fondo transparente*/
+    background: transparent;
+     border: 2px solid #fff;
+     outline: none;
+     border-radius: 6px;
+     cursor: pointer;
+     font-size: 1.1em;
+     color: #fff;
+     font-weight: 500;
+     margin-left: 40px;
+     /**/
+     transition: .5s;
+}
+
+.navigation .btnLogin-popup:hover{
+    background: #fff;
+    color: #162938;
+
+}
+.welcome{
+    font-size: 450%;
+    color: #fff;
+    font-style: oblique;
+    font-weight: bold;
+    -webkit-text-stroke-width: 2px; /* Ancho del borde */
+    -webkit-text-stroke-color:black; /* Color del borde */
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    /*Nav y el h2 se pone uno al lado del otro. No debajo*/
+    display: flex;
+    /*Espacio entro los elementos(Nav y h2)*/
+    justify-content: space-between;
+    /* Alinea los elementos*/
+    align-items: center;
+    z-index: 99;
+}
+
+
+.logo{
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
