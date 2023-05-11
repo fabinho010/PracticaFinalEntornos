@@ -22,7 +22,7 @@ function enviar(){
     // Configuración de  la solicitud HTTP GET al servlet .
     http.open("GET","http://localhost:8080/farmaceutica/login?email=" + email +"&password="+ password,true);
     //Define una función de devolución de llamada que se ejecutará cuando la respuesta de la solicitud HTTP esté lista.
-    /*http.onreadystatechange = function(){
+    http.onreadystatechange = function(){
         // Verifica si el estado de la respuesta es 200 ( que signica éxito) para continuar .
         if(this.readyState== 4 && http.status==200){
             //Obtiene el texto de la respuesta de la solicitud HTTP
@@ -32,7 +32,7 @@ function enviar(){
                 sessionStorage.setItem("session",session)
                 sessionStorage.setItem("mail",email);
                 // Se pone página de gestión,ya que el login ha sido un exito
-                window.location.href = "js\gestion.js";
+                window.location.href = "gestion.html";
             } else{
                 alert("Sesion interrumpida.Vuelva a intentarlo.")
             }
