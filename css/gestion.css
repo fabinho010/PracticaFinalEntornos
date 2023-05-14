@@ -1,0 +1,90 @@
+
+body {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    place-items: center;
+    background: url('../assets/images/fondo1.jpeg') no-repeat;
+    /*Ajusta la imagen al tamaño real*/
+     background-size: cover;
+     /*Sin esto la otra imagen queda mejor*/
+     background-position: center;
+}
+
+.container{
+    /*Para ponerlos horizontal*/
+    display: inline-flex;
+}
+
+/* Bloque de los iconos */
+.container .icon {
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* Envoltorio icono*/
+.container .icon span{
+    position: relative;
+    height: 60px;
+    width: 60px;
+    justify-content: space-between;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 10px 10px rgba(0, 0, 0,0.1);
+    /*Lo que envuelve,el circulo al iono*/
+    border-radius: 50%;
+    z-index: 2;
+
+}
+
+/*Esto es el icono directamente*/
+.container .icon span ion-icon{
+    font-size: 35px;
+    display:contents;
+}
+
+/*Titulos*/
+.container .icon .tooltip{
+    position: absolute;
+    top:0px;
+    background: #fff;
+    font-size: 20px;
+    padding: 10px 18px;
+    border-radius: 25px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0,0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+
+.container .icon:hover .tooltip{
+    top: -70px;
+    opacity: 1;
+    pointer-events: auto;
+
+}
+
+.container .icon .tooltip::before{
+    position:absolute;
+    content: "";
+    height: 15px;
+    background: #fff;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+
+}
+
+.container .icon:hover span,
+.container .icon:hover .tooltip{
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4);
+}
+
+.container .icon:hover span,
+.container .icon:hover .tooltip
