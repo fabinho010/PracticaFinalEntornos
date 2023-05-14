@@ -24,19 +24,19 @@ function enviar(){
     //Define una función de devolución de llamada que se ejecutará cuando la respuesta de la solicitud HTTP esté lista.
     http.onreadystatechange = function(){
         // Verifica si el estado de la respuesta es 200 ( que signica éxito) para continuar .
-        if(this.readyState== 4 && http.status==200){
-            //Obtiene el texto de la respuesta de la solicitud HTTP
-            var session = http.responseText;
-            if(session !==null){
-                //Almacena el valor de la sesión en el almacenamiento de sesión del navegador y lo mismo pasa con el email
-                sessionStorage.setItem("session",session)
-                sessionStorage.setItem("mail",email);
-                // Se pone página de gestión,ya que el login ha sido un exito
-                window.location.href = "gestion.html";
-            } else{
-                alert("Sesion interrumpida.Vuelva a intentarlo.")
+        if(this.readyState == 4 && http.status==200){
+                //Obtiene el texto de la respuesta de la solicitud HTTP
+                var session = http.responseText;
+                if(session !==null){
+                    //Almacena el valor de la sesión en el almacenamiento de sesión del navegador y lo mismo pasa con el email
+                    sessionStorage.setItem("session",session)
+                    sessionStorage.setItem("mail",email);
+                    // Se pone página de gestión,ya que el login ha sido un exito
+                    window.location.href ="paginas/gestion.html";
+                } else{
+                    alert("Sesion interrumpida.Vuelva a intentarlo.")
+                }
             }
-        }
     }
     //Envía la solicitud HTTP al servidor con los parámetros especificados en el método open()*/
     http.send();
