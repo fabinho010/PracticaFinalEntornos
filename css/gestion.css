@@ -13,7 +13,14 @@ body {
 
 .container{
     /*Para ponerlos horizontal*/
-    display: inline-flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    min-width: 500px;
+    display: flex;
+    justify-content: space-between;
 }
 
 /* Bloque de los iconos */
@@ -40,12 +47,13 @@ body {
     /*Lo que envuelve,el circulo al iono*/
     border-radius: 50%;
     z-index: 2;
+    transition: all .4s ease-in-out;
 
 }
 
 /*Esto es el icono directamente*/
 .container .icon span ion-icon{
-    font-size: 35px;
+    font-size: 5px;
     display:contents;
 }
 
@@ -81,10 +89,8 @@ body {
 
 }
 
-.container .icon:hover span,
-.container .icon:hover .tooltip{
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4);
+.container .icon:hover{
+   box-shadow: 0 0 30px;
+   color: #aaa;
+   transform: scale(1.2);
 }
-
-.container .icon:hover span,
-.container .icon:hover .tooltip
