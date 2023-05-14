@@ -80,7 +80,6 @@ body {
 
 .container .icon .tooltip::before{
     position:absolute;
-    content: "";
     height: 15px;
     background: #fff;
     bottom: -8px;
