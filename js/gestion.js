@@ -12,8 +12,8 @@ function verTabla(){
   let mail = sessionStorage.getItem('mail');
   let session = sessionStorage.getItem('session');
   var http = new XMLHttpRequest();
-
-  http.open("GET","http://localhost:8080/farmaceutica/ServXips?mail=" + mail +"&session="+ session, true);
+  http.open("GET","http://localhost:8080/farmaceutica/ServXips?mail=" + mail +"&session="+session, true);
   http.send();
+
 }
   
