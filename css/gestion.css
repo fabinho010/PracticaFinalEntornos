@@ -115,5 +115,49 @@
 
 }
 
+/*Tabla de chips*/
+#table-container table{
+  font-family: sans-serif;
+  width: 120%;
+  height: 100%;
+  border: solid 1px rgba(255, 255, 255, 0.2);
+  background: linear-gradient(#b7328d,#ac18c0);
+  color: white;
+  /*table-layout: fixed;*/
+  border-collapse: collapse;
+
+}
+
+thead{
+  background: rgba(243, 140, 210, 0.4);
+}
+
+th {
+  padding: 20px 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+}
+td{
+  padding: 15px;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+
+}
+tbody tr{
+  cursor: pointer;
+}
+tbody tr:hover {
+
+  background: rgba(243, 103, 199, 0.4);
+}
+
+.tabla-container .container-buttons{
+  
+}
+.tabla-container.active .container-buttons{
+
+}
+
+
 
 

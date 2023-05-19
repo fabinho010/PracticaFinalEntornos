@@ -1,3 +1,10 @@
+const tabla = document.querySelector(".tabla-container");
+const botonAlta = document.querySelector(".icon.tabla .two")
+
+botonAlta.addEventListener('click',()=> {
+    tabla.classList.add('active');
+})
+
 function irAlta() {
   window.location.href = "../paginas/alta.html";
 }
@@ -19,7 +26,8 @@ function verTabla(){
       let responseHtml = http.response;
       let tableContainer = document.getElementById("table-container");
       tableContainer.innerHTML = responseHtml;
-      tableContainer.style.display = "block"
+      containerButtons.style.display = 'none'; // Ocultar el bloque de botones
+      tablaContainer.style.display = 'block'; // Mostrar la tabla
     } else{
       console.error("Error en la solicitud"+ http.status);
     }
@@ -27,6 +35,6 @@ function verTabla(){
   http.send();
 
 }
-window.onload = function(){
+/*window.onload = function(){
   document.querySelector(".icon.tabla .two").onclick = verTabla;
-}
+}*/
