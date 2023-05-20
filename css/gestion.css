@@ -11,10 +11,11 @@
     background-size: cover;
      /*Sin esto la otra imagen queda mejor*/
      background-position: center;
+
   }
   
   .container-buttons {
-    position: absolute;
+    position:absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -22,6 +23,12 @@
     min-width: 500px;
     display: flex;
     justify-content: space-between;
+    transition: transform 0.5s;
+  }
+
+.container-buttons.arriba{
+    position:static;
+    transform: translateY(-180%); /* Iniciar el bloque de botones debajo del viewport */
   }
   
   .container-buttons a {
@@ -116,20 +123,32 @@
 }
 
 /*Tabla de chips*/
+#table-container{
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+#table-container.show{
+  opacity: 1;
+}
+
+
 #table-container table{
   font-family: sans-serif;
-  width: 120%;
+  width: 100%;
   height: 100%;
   border: solid 1px rgba(255, 255, 255, 0.2);
-  background: linear-gradient(#b7328d,#ac18c0);
+  background: linear-gradient(#c2e59c,#64b3f4);
   color: white;
   /*table-layout: fixed;*/
   border-collapse: collapse;
-
+  display: block;
+  overflow: scroll unset; /**************************/
 }
 
+
 thead{
-  background: rgba(243, 140, 210, 0.4);
+  background: rgba(174, 242, 232, 0.8);
 }
 
 th {
@@ -148,14 +167,7 @@ tbody tr{
 }
 tbody tr:hover {
 
-  background: rgba(243, 103, 199, 0.4);
-}
-
-.tabla-container .container-buttons{
-  
-}
-.tabla-container.active .container-buttons{
-
+  background: rgba(128, 234, 201, 0.8);
 }
 
 
