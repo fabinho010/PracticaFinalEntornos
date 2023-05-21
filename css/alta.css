@@ -1,0 +1,166 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.altaBody {
+    display: flex;       
+    justify-content:space-evenly;
+    font-family: 'FontAwesome', sans-serif;
+    background: url('../assets/images/fondo1.jpeg') no-repeat;
+        /*Ajusta la imagen al tamaño real*/
+    background-size: cover;
+     /*Sin esto la otra imagen queda mejor*/
+     background-position: center;
+}
+
+
+
+/*Boton para volver atras*/
+
+.icon.gestion{
+   position: absolute;
+   top: 100px;
+   left: 100px;
+}
+.one{
+    background: black;
+    cursor: pointer;
+    border: none;
+    padding: 16px 32px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    position:relative;
+    border-radius: 12px;
+}
+
+.one::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        red,blue,deeppink,blue,
+        red,blue,deeppink,blue
+    );
+    background-size: 800%;
+    border-radius: 10px;
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+}
+
+@keyframes glowing{
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.icon.gestion .tooltip {
+    position: absolute;
+    top:0px;
+    background: #fff;
+    font-size: 20px;
+    padding: 10px 18px;
+    border-radius: 25px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0,0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+
+.icon.gestion:hover .tooltip {
+    top: -70px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.icon.gestion .tooltip::before {
+    position:absolute;
+    height: 15px;
+    background: #162938;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.boxAlta{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 550px;
+    background: transparent;
+    border: 2px solid rgb(255,255,255,.5);
+    border-radius: 20px;
+    /*Filtro para que se vea el contenido del formulario*/
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgb(0,0,0,.5);
+    /*display: flex*/
+    display:flexbox;
+    /*flex-direction: column;*/
+    /*Centra el contenido del contenedor*/
+    justify-content: center;
+    align-items: center;
+}
+
+/* El bloque de inputs*/
+.boxAlta .input-box {
+    width: 100%;
+    padding: 40px;
+}
+
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    /*Lineas que separan los inputs*/
+    border-bottom: 2px solid #CCFFFF;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 10%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #CCFFFF;
+    font-weight: 500;
+    pointer-events: none;
+    /*Movimineto ante cualquier transicion o modificación que se haga*/
+    transition: .5s;
+}
+
+.input-box input {
+    
+}
+
+button {
+    width: 200px;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #CCFFFF;
+    font-weight: 500;
+    margin-top: 20px;
+}

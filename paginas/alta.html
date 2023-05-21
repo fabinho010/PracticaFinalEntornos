@@ -4,9 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Alta</title>
+    <link rel="stylesheet" href="\..\css\style.css">
+    <link rel="stylesheet" href="/css/alta.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/d577c03405.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    Alta
+<body class="altaBody">
+    <div class="icon gestion">
+        <div class="tooltip">Volver a Gestion</div>
+        <a class="one" type="button" onclick="irGestion()"><span><i class="fa-solid fa-arrow-left"></i></span></a>
+    </div>
+
+    <div class="boxAlta">
+        <div class="input-box">
+            <label for="idXip"> ID del Chip: </label>
+            <input type="text" name="idXip" id="idXip" required>
+        </div>
+        <div class="input-box">
+            <label for="paciente"> Paciente: </label>
+            <select name="paciente" id="paciente" required>
+
+            </select>
+        </div>
+        <div class="input-box">
+            <label for="medicamento"> Medicamento: </label>
+            <select name="medicamento" id="medicamento" required>
+                
+            </select>
+        </div>
+        <div class="input-box">
+            <label for="fecha"> Fecha limite: </label>
+            <input type="date" name="fecha" id="fecha" required>
+        </div>
+        <button type="submit">enviar</button>
+    </div>
+    <script src="../js/alta.js"></script>
 </body>
 </html>
