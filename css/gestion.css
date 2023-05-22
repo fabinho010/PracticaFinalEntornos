@@ -29,6 +29,8 @@
 .container-buttons.arriba{
     position:static;
     transform: translateY(-180%); /* Iniciar el bloque de botones debajo del viewport */
+    margin-bottom: 5%;
+    
   }
   
   .container-buttons a {

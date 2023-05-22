@@ -18,7 +18,7 @@ function verTabla(){
   http.onload = function(){
     if(http.status === 200  ){
       let responseHtml = http.response;
-      let containerButtons = document.querySelector(".container-buttons");
+      let containerButtons =  document.querySelector(".container-buttons");
       let tableContainer = document.getElementById("table-container");
       tableContainer.innerHTML = responseHtml;
       tableContainer.classList.add("show");
