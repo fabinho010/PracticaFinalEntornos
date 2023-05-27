@@ -116,6 +116,10 @@
 }
 
 .input-box input {
+    background-color: white;
+    border-radius: 6px;
+    height: 30px;
+    width: 100%;
     border: none;
     outline: none;
     font-size: 1em;
@@ -125,6 +129,12 @@
     padding: 0 35px 0 5px;
 }
 .input-box select {
+
+    background-color: white;
+    border-radius: 6px;
+    height: 30px;
+    width: 100%;
+    cursor: pointer;
     border: none;
     outline: none;
     font-size: 1em;
@@ -133,6 +143,7 @@
     font-size:large;
     padding: 0 35px 0 5px
 }
+
 
 button {
     width: 100%;

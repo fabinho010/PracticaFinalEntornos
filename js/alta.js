@@ -75,3 +75,42 @@ function getMedicamentos(){
 }
     getMedicamentos();
     getPatients();
+
+    function enviar(){
+        let mail = sessionStorage.getItem("mail"); 
+        let session = sessionStorage.getItem("session");
+        var idXip = document.getElementById("idXip").value;
+        var mailP = document.getElementById("paciente").value;
+        var medicamento = document.getElementById("medicamento").value;
+        var date = document.getElementById("fecha").value;
+        var http = new XMLHttpRequest();
+
+            // Validación de parámetros
+        if (!idXip || !mailP || !medicamento || !date) {
+            alert("Por favor, complete todos los campos.");
+        return;
+        }
+
+        http.open("POST","http://localhost:8080/farmaceutica/Release?mail=" + mail +"&session=" + session + "&idXip=" + idXip + "&paciente=" + mailP + "&medicamento=" 
+        + medicamento + "&fecha=" + date,true);
+        
+        http.onload = function(){
+            if (this.readyState== 4 && http.status==200){
+                var response = http.responseText;
+                if(response = "ok"){
+                    console.info("XIP registrado")
+                    alert("XIP registrado correctamente")
+
+                    // Limpiar los inputs
+                    document.getElementById("idXip").value = "";
+                    document.getElementById("paciente").value = "";
+                    document.getElementById("medicamento").value = "";
+                    document.getElementById("fecha").value = "";
+                }
+        }else{
+            console.error("Error en la solicitud Release",http.status);
+            alert("No se ha podido registrar el xip. Revise los parametros ID del chip o fecha límite.");
+        }
+    };
+        http.send();
+    }
