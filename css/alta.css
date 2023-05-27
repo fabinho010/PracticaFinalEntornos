@@ -71,7 +71,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 380px;
-    height: 550px;
+    height: 460px;
     background: transparent;
     border: 2px solid rgb(255,255,255,.5);
     border-radius: 20px;
@@ -151,10 +151,27 @@ button {
     background: #162938;
     border: none;
     outline: none;
-    border-radius: 6px;
+    border-radius: 3px;
     cursor: pointer;
+    text-decoration: none;
     font-size: 1em;
     color: #CCFFFF;
     font-weight: 500;
-    
+     animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(.99);
+        box-shadow: 0 0 0 0 rgba(256, 256, 256, .1);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 25px rgba(256, 256, 256, .99);
+    }
+    100% {
+        transform: scale(.99);
+        box-shadow: 0 0 0 0 rgba(256, 256, 256, 0);
+    }
 }
