@@ -62,7 +62,7 @@ function getMedicamentos(){
                 //Agrego las opciones
                 for(var i = 0; i < reponse.length; i++){
                     var option = document.createElement("option");
-                    option.text = reponse[i].id;
+                    option.text = reponse[i].name;
                     option.value = reponse[i].id;
                     medicinaSelect.add(option);
                 }
