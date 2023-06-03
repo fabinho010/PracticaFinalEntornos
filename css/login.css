@@ -119,7 +119,6 @@
 }
 
 
-
 /*Boton de sumit*/
 .btn{
     width: 100%;
@@ -133,3 +132,16 @@
     color: #CCFFFF;
     font-weight: 500;
 }
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .wrapper {
+      width: 90%;
+      height: auto;
+    }
+  
+    .wrapper.active-popup {
+      transform: scale(1);
+    }
+  }
+  

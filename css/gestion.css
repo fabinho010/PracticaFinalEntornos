@@ -197,6 +197,20 @@ tbody tr:hover {
   background: rgba(128, 234, 201, 0.8);
 }
 
-
+/* Responnsive */
+@media screen and (max-width: 768px) {
+  .container-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .container-buttons a {
+    margin-bottom: 60px;
+  }
+  
+  #table-container {
+    max-height: 150px;
+  }
+}
 
 
